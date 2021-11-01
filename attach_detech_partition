@@ -1,0 +1,9 @@
+
+
+alter table mq_recv_data detach partition mq_recv_data_y2021m10;
+drop table mq_recv_data_y2021m10;
+
+create table mq_recv_data_y2021m10 (like mq_recv_data);
+
+alter table mq_recv_data attach partition mq_recv_data_y2021m10
+for values from ('2021-10-01') to ('2021-11-01');
