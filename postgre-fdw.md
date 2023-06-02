@@ -14,8 +14,8 @@ Assuming that you want to create a fdw in your database db1
     ## switch to connecto db1 with user db1_user
     postgres=# \q
     psql -U db1_user db1
-    create user mapping for db1_user server greenplum options (user 'remote_user', password 'remote_user_passwd');
-    create schema gp;
-    import foreign schema public limit to (lp_raw)  from server greenplum into gp;
+    create user mapping for db1_user server remote_server options (user 'remote_user', password 'remote_user_passwd');
+    create schema remote_public;
+    import foreign schema public limit to (lp_raw)  from server remote_server into remote_public;
     
 
