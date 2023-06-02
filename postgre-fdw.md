@@ -10,7 +10,7 @@ Assuming that you want to create a fdw in your database db1
     postgres=# \c db1
     create extension postgres_fdw;
     create server remote_server foreign data wrapper postgres_fdw options (host '192.168.0.120', dbname 'remote_db_name', port '5432');
-    grant usage on foreign server greenplum to db1_user;
+    grant usage on foreign server remote_server to db1_user;
     ## switch to connecto db1 with user db1_user
     postgres=# \q
     psql -U db1_user db1
